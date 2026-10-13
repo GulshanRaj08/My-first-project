@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gulshan's First Website</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background: linear-gradient(135deg, #e0f2fe, #f5e8ff);
+    }
+    main {
+      width: min(100%, 520px);
+      padding: 32px 24px;
+      text-align: center;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(30, 41, 59, 0.14);
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #075985;
+      background: #e0f2fe;
+      font-size: 14px;
+    }
+    h1 { margin: 18px 0 12px; font-size: clamp(28px, 7vw, 40px); }
+    p { line-height: 1.6; color: #475569; }
+    button {
+      margin-top: 12px;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 20px;
+      color: white;
+      background: #2563eb;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #message { min-height: 26px; color: #166534; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">My First Project</span>
+    <h1>Hello, I'm Gulshan! 👋</h1>
+    <p>Welcome to my first website. I am learning coding and working toward becoming a software engineer.</p>
+    <button id="helloButton">Click me</button>
+    <p id="message" aria-live="polite"></p>
+  </main>
+  <script>
+    document.getElementById("helloButton").addEventListener("click", function () {
+      document.getElementById("message").textContent = "Great job! My first JavaScript button works! 🚀";
+    });
+  </script>
+</body>
+</html>
