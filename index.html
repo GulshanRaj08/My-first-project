@@ -1,65 +1,249 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulshan's First Website</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      font-family: Arial, sans-serif;
-      color: #172033;
-      background: linear-gradient(135deg, #e0f2fe, #f5e8ff);
-    }
-    main {
-      width: min(100%, 520px);
-      padding: 32px 24px;
-      text-align: center;
-      background: white;
-      border-radius: 22px;
-      box-shadow: 0 12px 35px rgba(30, 41, 59, 0.14);
-    }
-    .badge {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: #075985;
-      background: #e0f2fe;
-      font-size: 14px;
-    }
-    h1 { margin: 18px 0 12px; font-size: clamp(28px, 7vw, 40px); }
-    p { line-height: 1.6; color: #475569; }
-    button {
-      margin-top: 12px;
-      border: 0;
-      border-radius: 12px;
-      padding: 13px 20px;
-      color: white;
-      background: #2563eb;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    #message { min-height: 26px; color: #166534; font-weight: 700; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulshan | Developer Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #f8fafc;
+  line-height: 1.7;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #11182b;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  color: #60a5fa;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle at top, #1e3a8a, #0b1020 65%);
+}
+
+.tag {
+  color: #93c5fd;
+  border: 1px solid #3b82f6;
+  border-radius: 30px;
+  padding: 7px 16px;
+}
+
+h1 {
+  font-size: clamp(36px, 8vw, 62px);
+  margin: 22px 0;
+  line-height: 1.2;
+}
+
+h1 span {
+  color: #60a5fa;
+}
+
+.hero p {
+  color: #cbd5e1;
+  max-width: 550px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3b82f6;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 65px 8%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.intro {
+  color: #cbd5e1;
+  max-width: 650px;
+  margin: auto;
+}
+
+.skills, .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  max-width: 850px;
+  margin: 30px auto 0;
+}
+
+.card {
+  background: #151e32;
+  border: 1px solid #263650;
+  padding: 24px 16px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: #60a5fa;
+  transform: translateY(-5px);
+}
+
+.card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 10px 0 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #94a3b8;
+  background: #11182b;
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 16px 5%;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 13px;
+  }
+
+  section {
+    padding: 50px 6%;
+  }
+}
+</style>
 </head>
+
 <body>
-  <main>
-    <span class="badge">My First Project</span>
-    <h1>Hello, I'm Gulshan! 👋</h1>
-    <p>Welcome to my first website. I am learning coding and working toward becoming a software engineer.</p>
-    <button id="helloButton">Click me</button>
-    <p id="message" aria-live="polite"></p>
-  </main>
-  <script>
-    document.getElementById("helloButton").addEventListener("click", function () {
-      document.getElementById("message").textContent = "Great job! My first JavaScript button works! 🚀";
-    });
-  </script>
+
+<nav>
+  <div class="logo">Gulshan.dev</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="tag">My Developer Portfolio</span>
+  <h1>Hello, I'm <span>Gulshan!</span> 👋</h1>
+  <p>
+    I'm a student learning web development and coding.
+    My goal is to become a software engineer and build
+    useful things with technology.
+  </p>
+  <a class="btn" href="#projects">Explore My Projects ↓</a>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="intro">
+    I'm at the beginning of my coding journey.
+    I'm learning step by step, building projects,
+    and improving my skills every day.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <p class="intro">Technologies I'm learning</p>
+
+  <div class="skills">
+    <div class="card">🌐<h3>HTML</h3></div>
+    <div class="card">🎨<h3>CSS</h3></div>
+    <div class="card">⚡<h3>JavaScript</h3></div>
+    <div class="card">🐍<h3>Python</h3></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="projects">
+    <div class="card">
+      <h3>My First Website</h3>
+      <p>A responsive website built with HTML and CSS.</p>
+      <span class="tag">HTML · CSS</span>
+    </div>
+
+    <div class="card">
+      <h3>More Coming Soon</h3>
+      <p>I'm learning new skills to build more projects.</p>
+      <span class="tag">Learning</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p class="intro">
+    Thanks for visiting my portfolio!
+    I'm excited to keep learning and building.
+  </p>
+  <br>
+  <a class="btn" href="https://github.com/GulshanRaj08">
+    Visit My GitHub
+  </a>
+</section>
+
+<footer>
+  <p>Made with ❤️ by Gulshan | 2026</p>
+</footer>
+
 </body>
-</html>
+  </html>
+  
